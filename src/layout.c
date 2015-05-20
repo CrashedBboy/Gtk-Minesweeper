@@ -7,9 +7,13 @@ static GtkWidget *remain;
 static GtkWidget *during;
 GtkWidget *main_container;
 
+void set_labels();
+void fill_map();
+
 void main_container_init(){
 	main_container = gtk_vbox_new(FALSE, 0);
 	set_labels();
+	fill_map();
 }
 
 void set_labels(){
@@ -51,22 +55,7 @@ void fill_map(){
 			map[index].button = button;
 			index++;
 		}
-		gtk_box_pack_start(GTK_BOX(vbox), hbox, FALSE, FALSE, 0);
+		gtk_box_pack_start(GTK_BOX(main_container), hbox, FALSE, FALSE, 0);
 		gtk_widget_show(hbox);
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

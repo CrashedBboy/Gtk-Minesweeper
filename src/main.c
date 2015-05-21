@@ -2,9 +2,9 @@
 #include <gtk/gtk.h>
 #include "property.c"
 #include "mine.c"
+#include "event.c"
 #include "layout.c"
 #include "clock.c"
-#include "event.c"
 #include "judge.c" 
 
 int main(int argc, char *argv[]){

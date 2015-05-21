@@ -3,8 +3,6 @@ File Name	:layout.c
 Function 	:Layout and mine distribution
 Date		:2015/5/20
 ****************************************/
-static GtkWidget *remain;
-static GtkWidget *during;
 GtkWidget *window;
 GtkWidget *base_container;
 GtkWidget *content_container;
@@ -63,6 +61,7 @@ void fill_map(){
 			gtk_widget_set_size_request(button, BUTTON_SIZE, BUTTON_SIZE);
 			g_object_set(G_OBJECT(button), "can-focus", FALSE, NULL);
 			gtk_box_pack_start(GTK_BOX(hbox), button, FALSE, FALSE, 0);
+			g_signal_connect(G_OBJECT(button),"button-press-event",G_CALLBACK(on_mouse_click),(gpointer)index);
 			map[index].button = button;
 			index++;
 		}

@@ -11,6 +11,7 @@ int main(int argc, char *argv[]){
 	gtk_init(&argc, &argv);
 	mine_init();
 	layout_init();
+	g_timeout_add(1000, (GSourceFunc)tick, NULL);
 	gtk_main();
 	return 0;
 }

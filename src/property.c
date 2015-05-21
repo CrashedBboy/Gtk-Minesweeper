@@ -29,3 +29,5 @@ gboolean on_mouse_click(GtkWidget*, GdkEventButton*, gpointer);
 
 void open_block(gint, gint);
 gboolean game_end(gboolean);
+
+gboolean tick(gpointer);

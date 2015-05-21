@@ -24,6 +24,7 @@ void update_around(gint);
 void layout_init();
 void set_labels();
 void fill_map();
+GdkPixbuf *create_pixbuf(const gchar*);
 
 gboolean on_mouse_click(GtkWidget*, GdkEventButton*, gpointer);
 

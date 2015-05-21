@@ -11,6 +11,7 @@ void layout_init(){
 	window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 	gtk_window_set_title(GTK_WINDOW(window), "Minesweeper");
 	gtk_window_set_default_size(GTK_WINDOW(window), BUTTON_SIZE*WIDTH, BUTTON_SIZE*HEIGHT + 20);
+	gtk_window_set_icon(GTK_WINDOW(window), create_pixbuf("img/window.png"));
 	g_signal_connect(G_OBJECT(window), "delete_event",gtk_main_quit, NULL);
 
 	base_container = gtk_vbox_new(FALSE, 0);
@@ -65,4 +66,16 @@ void fill_map(){
 		}
 		gtk_box_pack_start(GTK_BOX(content_container), hbox, FALSE, FALSE, 0);
 	}
+}
+
+GdkPixbuf *create_pixbuf(const gchar *filename){
+   GdkPixbuf *pixbuf;
+   GError *error = NULL;
+   pixbuf = gdk_pixbuf_new_from_file(filename, &error);
+   if(!pixbuf) {
+      fprintf(stderr, "%s\n", error->message);
+      g_error_free(error);
+   }
+
+   return pixbuf;
 }

@@ -5,20 +5,27 @@ Date		:2015/5/20
 ***********************************/
 static gint WIDTH = 10;
 static gint HEIGHT = 10;
-static gint MINE_NUM = 20;
+static gint MINE_NUM = 1;
 static gint BUTTON_SIZE = 22;
 
 static GtkWidget *remain;
 static GtkWidget *during;
 
-static gboolean game_over = FALSE;
+static gboolean end_flag = FALSE;
 static gint opened = 0;
 static gint marked = 0;
 
-void mine_set();
-void update_around();
+static gint game_time = 0;
+
 void mine_init();
-gboolean on_mouse_click();
+void mine_set();
+void update_around(gint);
+
+void layout_init();
 void set_labels();
 void fill_map();
-void layout_init();
+
+gboolean on_mouse_click(GtkWidget*, GdkEventButton*, gpointer);
+
+void open_block(gint, gint);
+gboolean game_end(gboolean);

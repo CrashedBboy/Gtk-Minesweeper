@@ -7,7 +7,10 @@
 #include "event.c"
 #include "judge.c" 
 
-int main(){
-	printf("Hello Minesweeper\n");
+int main(int argc, char *argv[]){
+	gtk_init(&argc, &argv);
+	mine_init();
+	layout_init();
+	gtk_main();
 	return 0;
 }

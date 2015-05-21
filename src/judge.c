@@ -36,6 +36,9 @@ void open_block(row, column){
 	}
 
 	if (map[index].around == 0){
+		gchar buffer[2];
+		g_snprintf(buffer, 2, "%d", 0);
+		gtk_button_set_label(GTK_BUTTON(button), buffer);
 		if (row > 0){
 			open_block(row - 1, column);
 			if(column > 0) 
@@ -62,6 +65,9 @@ gboolean game_end(gboolean won){
 	gchar msg[100];
 	if (end_flag)
 		return;
+
+	end_flag = TRUE;
+
 	if (won){
 		g_snprintf(msg, 100, "You won! You have cleared the game in %3d seconds.", game_time);
 	} else {

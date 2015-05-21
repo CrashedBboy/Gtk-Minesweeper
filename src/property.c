@@ -5,7 +5,7 @@ Date		:2015/5/20
 ***********************************/
 static gint WIDTH = 10;
 static gint HEIGHT = 10;
-static gint MINE_NUM = 1;
+static gint MINE_NUM = 5;
 static gint BUTTON_SIZE = 22;
 
 static GtkWidget *remain;

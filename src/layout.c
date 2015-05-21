@@ -32,7 +32,7 @@ void set_labels(){
 	
 	label= gtk_label_new("Mines:");
 	gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 4);
-	
+
 	g_snprintf(buffer, 4, "%d", MAX(0, MINE_NUM-marked));
 	remain = gtk_label_new(buffer);
 	gtk_box_pack_start(GTK_BOX(hbox), remain, FALSE, FALSE, 2);

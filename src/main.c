@@ -2,8 +2,8 @@
 #include <gtk/gtk.h>
 #include "property.c"
 #include "mine.c"
-#include "event.c"
 #include "layout.c"
+#include "event.c"
 #include "clock.c"
 #include "judge.c" 
 

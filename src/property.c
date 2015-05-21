@@ -14,3 +14,11 @@ static GtkWidget *during;
 static gboolean game_over = FALSE;
 static gint opened = 0;
 static gint marked = 0;
+
+void mine_set();
+void update_around();
+void mine_init();
+gboolean on_mouse_click();
+void set_labels();
+void fill_map();
+void layout_init();

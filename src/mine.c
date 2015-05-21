@@ -12,8 +12,6 @@ struct block{
 };
 
 static struct block *map;
-void mine_set();
-void update_around();
 
 void mine_init(){
 	map = (struct block *)g_malloc0(sizeof(struct block)* WIDTH * HEIGHT);

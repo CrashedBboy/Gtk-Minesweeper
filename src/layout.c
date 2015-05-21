@@ -7,10 +7,6 @@ GtkWidget *window;
 GtkWidget *base_container;
 GtkWidget *content_container;
 
-void set_labels();
-void fill_map();
-void layout_init();
-
 void layout_init(){
 	window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 	gtk_window_set_title(GTK_WINDOW(window), "Minesweeper");
@@ -31,12 +27,14 @@ void layout_init(){
 void set_labels(){
 	GtkWidget *hbox;
 	GtkWidget *label;
+	gchar buffer[4];
 	hbox = gtk_hbox_new(FALSE, 0);
 	
 	label= gtk_label_new("Mines:");
 	gtk_box_pack_start(GTK_BOX(hbox), label, FALSE, FALSE, 4);
-
-	remain = gtk_label_new("0");
+	
+	g_snprintf(buffer, 4, "%d", MAX(0, MINE_NUM-marked));
+	remain = gtk_label_new(buffer);
 	gtk_box_pack_start(GTK_BOX(hbox), remain, FALSE, FALSE, 2);
 
 	label= gtk_label_new("Time:");
